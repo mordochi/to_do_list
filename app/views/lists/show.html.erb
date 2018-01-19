@@ -1,0 +1,17 @@
+<div class="container space">
+  <table class="table table-striped">
+    <tr>
+      <td class="col-sm-2"><%= "標題" %></td>
+      <td><%= @list.name%></td>
+    </tr>
+    <tr>
+      <td><%= "到期日期" %></td>
+      <td><%= @list.due_date %></td>
+    </tr>
+    <tr>
+      <td><%= "描述" %></td>
+      <td><%= simple_format(@list.note) %></td>
+    </tr>
+  </table>
+  <%= link_to 'Back', lists_path, class: "btn btn-default" %>
+</div>

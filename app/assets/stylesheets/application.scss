@@ -1,0 +1,32 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+.title{
+  font-size: 18px;
+}
+
+.smaller{
+  padding-top: 0px;
+  padding-bottom: 0px; 
+}
+
+ul{
+  font-size: 13px;
+  list-style: none;
+  color: red;
+}
+
+.btn-float{
+  float: left;
+  margin-left: 5px;
+}
+
+.space{
+  margin-top: 2%;
+  width: 60%;
+}
+
+.space2{
+  margin-top: .5%;
+  width: 80%;
+}

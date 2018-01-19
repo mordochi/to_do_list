@@ -1,0 +1,34 @@
+<div class="container space2">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th class="title"><%= "標題" %></th>
+        <th class="title"><%= "到期日期" %></th>
+        <th><%= "" %></th>
+        <th><%= "" %></th>
+        <th><%= "" %></th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% @lists.each do |list| %>
+        <tr>
+          <td><%= list.name %></td>
+          <td><%= list.due_date %></td>
+          <td><%= link_to 'Show', list_path(list), class: "btn btn-default smaller" %></td>
+          <td><%= link_to 'Edit', edit_list_path(list), class: "btn btn-default smaller" %></td>
+          <!--為何不能使用list.expire?-->
+            <%if  list.due_date > Time.now %>
+              <td><%= link_to 'Destroy', list_path(list), method: :delete, data:{ confirm: "Are you sure?" }, class: "btn btn-default smaller" %></td>
+            <% else %>
+              <td><%= link_to "Destroy", lists_url, method: :get, data: { confirm: "已過期的事項將無法刪除！" }, class: "btn btn-default smaller" %></td>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to 'Add Things To Do', new_list_path, class: "btn btn-default" %>
+</div>
+  
